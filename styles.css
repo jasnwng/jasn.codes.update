@@ -1,4 +1,6 @@
-
+html {
+  scroll-behavior: smooth;
+}
 
 .sec-1 {
   height: 50vh;
@@ -7,7 +9,7 @@
   
 }
 .sec-2 {
-  height: 100vh;
+  height: 480vh;
   background-color: #2a2a2a;
   color: white;
   
@@ -126,20 +128,57 @@
   vertical-align: top;
   width: 100%;
   top: 40vh;
-  animation: about-entry linear forwards;
+  animation: about-container-entry linear forwards;
   animation-timeline: view();
-  animation-range: 45% 100%;
-
+  animation-range: 10% 100%;
+  color: #D9D9D9;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes about-entry {
+.about-text-secondary {
+  color: #A3A3A3;
+  position: absolute;
+  top: 1em;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+
+#about-text-2 .show {
+  /* opacity: 1; */
+  color: red;
+}
+
+/* #about-text-2 {
+  animation: about-secondary 2s ease-in-out infinite alternate;
+}
+
+#about-text-3 {
+  animation: about-secondary 2s ease-in-out 2s infinite alternate;
+} */
+
+/* #about-text-4 {
+  animation: about-secondary 2s ease-in-out 4s infinite alternate;
+} */
+
+
+
+@keyframes about-container-entry {
   0% { opacity: 0;}
   5% {opacity: 0;}
   30% {opacity: 1}
-  80% {opacity: 1;}
-  95% {opacity: 0;}
+  95% {opacity: 1;}
+  /* 95% {opacity: 0;} */
   100% { opacity: 0;}
 }
+
+@keyframes about-secondary {
+  0% { opacity: 0;}
+  /* 50% { opacity: ;} */
+  100% { opacity: 1;}
+}
+
 
 :root {
   --scroll: 0;

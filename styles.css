@@ -1,19 +1,21 @@
 
 
 .sec-1 {
-  height: 100vh;
+  height: 50vh;
   background-color: #2a2a2a;
   color: white;
   
 }
 .sec-2 {
   height: 100vh;
-  background-color: green;
+  background-color: #2a2a2a;
+  color: white;
   
 }
 .sec-3 {
   height: 100vh;
-  background-color: cyan;
+  background-color: #2a2a2a;
+  color: white;
   
 }
 
@@ -26,7 +28,7 @@
   vertical-align: top;
   width: 100%;
   height: 20%;
-  top: 45vh;
+  top: 40vh;
   vertical-align: top;
   animation: move-title-main linear forwards;
   animation-timeline: --header;
@@ -36,12 +38,10 @@
 }
 
 @keyframes move-title-main {
-  0% {
-    transform: translate(0);
-  }
+  0% {transform: translate(0);}
   100% {
     font-size: 36px;
-    transform: translate(0 , -45vh);
+    transform: translate(0 , -40vh);
     width: 5em;
     height: 1em;
   }
@@ -50,11 +50,6 @@
 #title-main {
   display: flex;
   justify-content: center;
-
-}
-
-#title-main span:hover {
-  color: #59ACDB;
 }
 
 #title-main span { 
@@ -62,28 +57,35 @@
   opacity: 0;
 }
 
+#title-main span:hover {
+  top: 0.01em;
+}
+
 #title-secondary  { 
   position: relative;
   opacity: 0;
 }
 
-#title-main span:nth-child(1) {animation: move-text ease 1s forwards}
-#title-main span:nth-child(2) {animation: move-text ease 1s forwards 0.1s}
-#title-main span:nth-child(3) {animation: move-text ease 1s forwards 0.2s}
-#title-main span:nth-child(4) {animation: move-text ease 1s forwards 0.3s}
-#title-main span:nth-child(5) {animation: move-text ease 1s forwards 0.4s}
-#title-main span:nth-child(6) {animation: move-text ease 1s forwards 0.5s}
-#title-main span:nth-child(7) {animation: move-text ease 1s forwards 0.6s}
-#title-main span:nth-child(8) {animation: move-text ease 1s forwards 0.7s}
-#title-main span:nth-child(9) {animation: move-text ease 1s forwards 0.8s}
-#title-main span:nth-child(10) {animation: move-text ease 1s forwards 0.9s}
-#title-main span:nth-child(11) {animation: move-text ease 1s forwards 2s}
-#title-secondary {animation: move-text ease 1s forwards 2s}
+#title-main span:nth-child(1) {animation: title-move-in ease 1s forwards}
+#title-main span:nth-child(2) {animation: title-move-in ease 1s forwards 0.1s}
+#title-main span:nth-child(3) {animation: title-move-in ease 1s forwards 0.2s}
+#title-main span:nth-child(4) {animation: title-move-in ease 1s forwards 0.3s}
+#title-main span:nth-child(5) {animation: title-move-in ease 1s forwards 0.4s}
+#title-main span:nth-child(6) {animation: title-move-in ease 1s forwards 0.5s}
+#title-main span:nth-child(7) {animation: title-move-in ease 1s forwards 0.6s}
+#title-main span:nth-child(8) {animation: title-move-in ease 1s forwards 0.7s}
+#title-main span:nth-child(9) {animation: title-move-in ease 1s forwards 0.8s}
+#title-main span:nth-child(10) {animation: title-move-in ease 1s forwards 0.9s}
+#title-main span:nth-child(11) {animation: title-fade-in ease 1s forwards 2s}
+#title-secondary {animation: title-fade-in ease 1s forwards 2s}
 
-
-@keyframes move-text {
+@keyframes title-move-in {
     0% { bottom: 0.2em; } 
     80% { bottom: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes title-fade-in {
     100% { opacity: 1; }
 }
 
@@ -99,7 +101,7 @@
   justify-content: flex-end;
   width: 80%;
   height: 20%;
-  top: 45vh;
+  top: 40vh;
   animation: move-title-secondary linear forwards;
   animation-timeline: --header;
   view-timeline-name: --header;
@@ -107,32 +109,37 @@
 }
 
 @keyframes move-title-secondary {
-  0% {
-    transform: translate(0);
-  }
+  0% {transform: translate(0);}
   100% {
     font-size: 36px;
-    transform: translate(0 , -45vh);
+    transform: translate(0 , -40vh);
     width: 100%;
     height: 1em;
   }
 }
 
-/* 
-#title-container {
-  background-color: yellow;
-  top: 50vh;
-  position: fixed;
+#about-container {
+  opacity: 0%;
+  font-size: 32px;
+  position: sticky;
   text-align: center;
+  vertical-align: top;
   width: 100%;
-  top: 45vh;
-  animation: move-title-main linear forwards;
-  animation-timeline: --header;
-  view-timeline-name: --header;
-  animation-range: 50% 80%;
+  top: 40vh;
+  animation: about-entry linear forwards;
+  animation-timeline: view();
+  animation-range: 45% 100%;
 
 }
- */
+
+@keyframes about-entry {
+  0% { opacity: 0;}
+  5% {opacity: 0;}
+  30% {opacity: 1}
+  80% {opacity: 1;}
+  95% {opacity: 0;}
+  100% { opacity: 0;}
+}
 
 :root {
   --scroll: 0;

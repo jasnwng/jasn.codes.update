@@ -6,20 +6,26 @@ html {
   height: 50vh;
   background-color: #2a2a2a;
   color: white;
-  
 }
+
 .sec-2 {
   height: 480vh;
   background-color: #2a2a2a;
   color: white;
-  
 }
+
 .sec-3 {
   height: 100vh;
   background-color: #2a2a2a;
   color: white;
-  
 }
+
+.sec-4 {
+  height: 100vh;
+  background-color: #2a2a2a;
+  color: white;
+}
+
 
 #title-main-container {
   /* background-color: blue;
@@ -137,17 +143,29 @@ html {
 }
 
 .about-text-secondary {
-  color: #A3A3A3;
+  color: #59ACDB;
   position: absolute;
   top: 1em;
   opacity: 0;
   transition: opacity 1s;
+  /* animation: change-color 0.5s ease-in-out infinite alternate; */
+}
+
+@keyframes change-color {
+  0% {color: #A3A3A3;} 
+  100% {color: #59ACDB;}
 }
 
 
-#about-text-2 .show {
+#about-text-3 {
   /* opacity: 1; */
-  color: red;
+  color: #41d650;
+}
+
+
+#about-text-4 {
+  /* opacity: 1; */
+  color:  #dc6b25;
 }
 
 /* #about-text-2 {
@@ -177,6 +195,89 @@ html {
   0% { opacity: 0;}
   /* 50% { opacity: ;} */
   100% { opacity: 1;}
+}
+
+#works-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  padding: 1.5em;
+  font-size: 96px;
+}
+
+#contact-container{
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em 0;
+  padding: 1.5em 0;
+  font-size: 96px;
+  gap: 1em;
+}
+
+#contact-body {
+  /* background-color: white; */
+  display: flex;
+  flex-direction: row;
+}
+
+#contact-buttons-container {
+  /* background-color: yellow; */
+  font-size: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#contact-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+#contact-buttons img {
+  width: 60px;
+}
+
+#contact-form {
+  /* background-color: red; */
+  font-size: 30px;
+  width: 50%;
+  display: flex;
+}
+
+#contact-form form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+
+}
+
+#contact-form label {
+  padding: 0;
+  margin-bottom: -0.6em;
+}
+
+#contact-form input {
+  padding: 0.5em;
+}
+
+#contact-form input, textarea {
+  width: 25em;
+  font-size: 20px;
+  padding: 0.5em;
+} 
+
+#contact-form button {
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #59ACDB;
+  padding: 0.5em;
 }
 
 

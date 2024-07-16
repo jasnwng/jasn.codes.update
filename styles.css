@@ -39,8 +39,8 @@ body {
 .sec-5 {
   height: 100vh;
   background-color: #2a2a2a;
+  /* background-color: red; */
   color: white;
-  padding: 2em 0;
 }
 
 
@@ -271,17 +271,23 @@ body {
 }
 
 #technologies-container h1 {
+  position: sticky;
+  top: 5vh;
   font-size:  max(min(16vw, 128px), 30px);
   animation: fade-in-out linear forwards;
-  animation-timeline: --tech;
-  view-timeline-name: --tech;
-  animation-range: 40% 80%;
+  animation-timeline: view();
+  /* animation-range: 20% 95%; */
+  animation-range: contain;
   opacity: 0%;
+  margin-bottom: 1em;
 }
 
 #technologies-list {
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 1em; 
 }
 
@@ -294,13 +300,19 @@ body {
 .technologies-category h4 {
   /* font-size:  max(min(8vw, 64px), 16px); */
   font-size:  max(min(6vw, 48px), 12px);
+  animation: fade-in-out linear forwards;
+  animation-timeline: view();
+  /* animation-range: contain; */
+  animation-range: 20% 95%;
+  opacity: 0%;
 }
 
 .technologies-category p {
   font-size:  max(min(6vw, 48px), 12px);
   animation: slide-in linear forwards;
   animation-timeline: view();
-  animation-range: 0% 30%
+  animation-range: 30% 60%;
+  opacity: 0;
 }
 
 #technologies-list {
@@ -309,9 +321,9 @@ body {
 }
 
 @keyframes slide-in {
-  0% {transform: translateX(50%); }
+  0% {transform: translateX(50%); opacity: 0.5}
   50% {transform: translateX(0);  color: white}
-  100% { color:  #df5f24;}
+  100% { color:  #df5f24; opacity: 1}
 }
 
 #contact-container{
@@ -323,11 +335,12 @@ body {
   /* margin: 1em 0; */
   /* padding: 1.5em 0; */
   font-size:  max(min(16vw, 128px), 30px);
-  animation: heading-fade-in linear forwards;
-  animation-timeline: --contact;
-  view-timeline-name: --contact;
-  animation-range: 40% 50%;
-  opacity: 0;
+  animation: fade-in-out linear forwards;
+  animation-timeline: view();
+  /* animation-range: contain; */
+  animation-range: 30% 95%;
+  opacity: 0%;
+  padding: 0.5em 0;
 }
 
 #contact-container h1 {
@@ -338,7 +351,7 @@ body {
   view-timeline-name: --contact;
   animation-range: 20% 40%;
   opacity: 0; */
-  margin: 3em 0 0 0;
+  /* margin: 1em 0 0 0; */
 }
 
 #contact-body {
@@ -436,11 +449,13 @@ body {
 }
 
 #technologies-list {
+  align-items: center;
   gap: 0;
 }
 
 .technologies-category {
   /* background-color: yellow; */
+  width: 40%;
   flex-direction: row;
   justify-items: flex-start;
   gap: 2em;
@@ -449,7 +464,7 @@ body {
 
 .technologies-type {
   /* background-color: green; */
-  width: 35%;
+  width: 50%;
 }
 
 .technologies-items {

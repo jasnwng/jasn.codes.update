@@ -16,7 +16,7 @@ body {
 }
 
 .sec-2 {
-  height: 700vh;
+  height: 500vh;
   background-color: #2a2a2a;
   /* background-color: grey; */
   color: white;
@@ -315,7 +315,7 @@ body {
   font-size:  max(min(6vw, 48px), 12px);
   animation: slide-in linear forwards;
   animation-timeline: view();
-  animation-range: 30% 60%;
+  animation-range: 30% 95%;
   opacity: 0;
 }
 
@@ -326,8 +326,9 @@ body {
 
 @keyframes slide-in {
   0% {transform: translateX(50%); opacity: 0.5}
-  50% {transform: translateX(0);  color: white}
-  100% { color:  #df5f24; opacity: 1}
+  50% {transform: translateX(0); color:  #df5f24; opacity: 1}
+  80% {transform: translateY(0); color:  #df5f24; opacity: 1; }
+  100% {transform: translateY(-5vh); color:  white; opacity: 0; }
 }
 
 #contact-container{
@@ -445,7 +446,7 @@ body {
 @media screen and (min-width: 1008px) {
 
   .sec2 {
-    height: 500vh;
+    height: 200vh;
 
   }
 
@@ -465,7 +466,8 @@ body {
 
 .technologies-category {
   /* background-color: yellow; */
-  width: 40%;
+  width: 100%;
+  max-width: 1500px;
   flex-direction: row;
   justify-items: flex-start;
   gap: 2em;

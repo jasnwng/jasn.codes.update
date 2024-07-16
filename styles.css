@@ -298,6 +298,7 @@ body {
 }
 
 .technologies-category h4 {
+  text-transform: uppercase;
   /* font-size:  max(min(8vw, 64px), 16px); */
   font-size:  max(min(6vw, 48px), 12px);
   animation: fade-in-out linear forwards;
@@ -308,6 +309,7 @@ body {
 }
 
 .technologies-category p {
+  text-transform: uppercase;
   font-size:  max(min(6vw, 48px), 12px);
   animation: slide-in linear forwards;
   animation-timeline: view();

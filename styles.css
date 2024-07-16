@@ -25,8 +25,9 @@ body {
 }
 
 .sec-3 {
-  /* height: 200vh; */
+  height: 400vh;
   background-color: #2a2a2a;
+  /* background-color: blue; */
   color: white;
 }
 
@@ -122,6 +123,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  height: 3em;
   /* height:  calc( max(min(16vw, 128px), 30px)); */
   top: 40vh;
   animation: move-title-secondary linear forwards;
@@ -213,37 +215,60 @@ body {
 
 #works-container {
   /* background-color: red; */
+  position: sticky;
+  top: 5vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  margin: 1em;
-  padding: 1.5em;
+  margin: 3em 0 3em 0 ;
+  /* padding: 1.5em; */
   font-size:  max(min(16vw, 128px), 30px);
-  
+}
+
+#works-images {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* max-width: 800px; */
+}
+
+.works-image-item {
+  transform: translateX(300%);
+  animation: image-scroll linear forwards;
+  animation-timeline: view();
+  animation-range: 10% 100%;
+}
+
+@keyframes image-scroll {
+  0% {transform: translateX(+300%)}
+  100% {transform: translateX(-300%)}
 }
 
 #works-container h1 {
-  position: sticky;
-  top: 0;
-  animation: fade-in-out linear forwards;
+  /* animation: fade-in-out linear forwards;
   animation-timeline: --works;
   view-timeline-name: --works;
   animation-range: 40% 80%;
-  opacity: 0;
-  margin: 3em 0 6em 0;
+  opacity: 0; */
+  /* margin: 3em 0 6em 0; */
+  position: sticky;
+  top: 5vh;
   z-index: 1;
 }
 
 #works-container img {
-  /* position: absolute; */
+  /* position: relative; */
+  top: 10vh;
   width: 80vw;
   margin: 0.3em;
-  animation: fade-in-out linear forwards;
+  /* opacity: 0; */
+  /* animation: fade-in-out linear forwards;
   animation-timeline: --portfolio;
   view-timeline-name: --portfolio;
   animation-range: 20% 80%;
-  opacity: 0;
+  opacity: 0; */
 }
 
 @keyframes heading-fade-in {

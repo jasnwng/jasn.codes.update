@@ -82,10 +82,13 @@ body {
 #title-main span { 
   position: relative;
   opacity: 0;
+  /* top: 0; */
+  /* transition: all 100ms ease-in-out; */
 }
 
 #title-main span:hover {
-  top: 0.01em;
+  /* top: 0.02em; */
+  color: #df5f24;
 }
 
 
@@ -105,7 +108,7 @@ body {
 @keyframes title-move-in {
     0% { bottom: 0.2em; } 
     80% { bottom: 0; }
-    100% { opacity: 1; }
+    100% { opacity: 1;}
 }
 
 @keyframes title-fade-in {
@@ -425,24 +428,18 @@ body {
   align-items: center;
   /* margin: 1em 0; */
   /* padding: 1.5em 0; */
-  font-size:  max(min(16vw, 128px), 30px);
-  animation: fade-in-out linear forwards;
-  animation-timeline: view();
-  /* animation-range: contain; */
-  animation-range: 30% 95%;
-  opacity: 0%;
   padding: 0.5em 0;
 }
 
 #contact-container h1 {
   position: sticky;
-  top: 0;
-  /* animation: heading-fade-in linear forwards;
-  animation-timeline: --contact;
-  view-timeline-name: --contact;
-  animation-range: 20% 40%;
-  opacity: 0; */
-  /* margin: 1em 0 0 0; */
+  top: 5vh;
+  font-size:  max(min(16vw, 128px), 30px);
+  animation: fade-in-out linear forwards;
+  animation-timeline: view();
+  animation-range: contain;
+  opacity: 0%;
+  margin: 2em 0 2cqi 0;
 }
 
 #contact-body {
@@ -451,11 +448,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* animation: heading-fade-in linear forwards;
-  animation-timeline: --contact;
-  view-timeline-name: --contact;
-  animation-range: 20% 40%;
-  opacity: 0; */
+  animation: fade-in-out linear forwards;
+  animation-timeline: view();
+  animation-range: 30% 100%;
+  opacity: 0%;
+  padding-bottom: 5em;
 }
 
 #contact-body p {
@@ -472,6 +469,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1em;
+
 }
 
 #contact-buttons {
@@ -492,6 +490,7 @@ body {
    /* font-size:  max(min(6vw, 48px), 12px); */
   font-size: max(min(3vw, 32px), 24px);
   display: flex;
+
 }
 
 #contact-form form {
@@ -524,6 +523,11 @@ body {
   padding: 0.5em;
 }
 
+#contact-form button:hover {
+  cursor: pointer;
+}
+
+
 
 :root {
   --scroll: 0;
@@ -539,14 +543,6 @@ body {
     height: 600vh;
   }
 
-/*   
-#about-container span {
-  display: block;
-}
-
-.about-text-secondary {
-  position: absolute;
-} */
 
 #works-container {
   /* background-color: yellow; */
@@ -683,13 +679,6 @@ body {
 #contact-body p {
   display: block;
 }
-
-#contact-form form {
-  /* width: 40vw; */
-  /* max-width: 500px; */
-}
-
-
 
 
 }

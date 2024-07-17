@@ -7,6 +7,23 @@ body {
   background-color: #2a2a2a;
   /* background-color: grey; */
 }
+.scroll-watcher {
+  height: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color:#df5f24;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {scale: 1 1;}
+}
 
 .sec-1 {
   height: 50vh;
@@ -87,8 +104,8 @@ body {
 }
 
 #title-main span:hover {
-  /* top: 0.02em; */
-  color: #df5f24;
+  top: 0.01em;
+  /* color: #df5f24; */
 }
 
 

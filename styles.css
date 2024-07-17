@@ -16,7 +16,7 @@ body {
 }
 
 .sec-2 {
-  height: 500vh;
+  height: 400vh;
   background-color: #2a2a2a;
   /* background-color: grey; */
   color: white;
@@ -25,7 +25,7 @@ body {
 }
 
 .sec-3 {
-  height: 400vh;
+  height: 600vh;
   background-color: #2a2a2a;
   /* background-color: blue; */
   color: white;
@@ -234,11 +234,56 @@ body {
   /* max-width: 800px; */
 }
 
-.works-image-item {
+.works-text-container {
+  background-color: #1e1e1e;
+  min-width: 20em;
+  margin: 0 2em 0 0em;
+  padding: 1em 2em;
+  border-radius: 0 15px 15px 0 ;
+  /* opacity: 0.2; */
+  z-index: -1;
+  transform: translateX(-90%);
+  transition: transform 350ms ease-in-out;
+  /* border-left: 1px white dashed; */
+  /* border-right: 1px white solid; */
+  /* opacity: 0.2; */
+
+ 
+}
+
+.works-text-container:hover {
+  transform: translateX(0%);
+  z-index: 1;
+  /* min-width: 20em; */
+  /* font-size:  max(min(16vw, 128px), 30px); */
+}
+
+.works-item-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes slide-appear {
+  0% {transform: translateX(-90%)}
+  100% {transform: translateX(0%)}
+}
+
+.works-item {
+  display: flex;
+  flex-direction: row;
   transform: translateX(300%);
   animation: image-scroll linear forwards;
   animation-timeline: view();
   animation-range: 10% 100%;
+  font-size:  max(min(4vw, 22px), 12px);
+  font-size:  max(min(3vw, 20px), 11px);
+}
+
+.works-subtitle {
+  font-size:  max(min(3vw, 20px), 11px);
+  color: #ADADAD;
+  margin-top: 1em;
+
 }
 
 @keyframes image-scroll {
@@ -256,19 +301,15 @@ body {
   position: sticky;
   top: 5vh;
   z-index: 1;
+  margin-bottom: 0.5em;
 }
 
 #works-container img {
-  /* position: relative; */
-  top: 10vh;
-  width: 80vw;
-  margin: 0.3em;
-  /* opacity: 0; */
-  /* animation: fade-in-out linear forwards;
-  animation-timeline: --portfolio;
-  view-timeline-name: --portfolio;
-  animation-range: 20% 80%;
-  opacity: 0; */
+  /* top: 10vh; */
+  width: 60vw;
+  border-radius: 15px 0 0 15px ;
+  border-right: 1px white dashed;
+  
 }
 
 @keyframes heading-fade-in {

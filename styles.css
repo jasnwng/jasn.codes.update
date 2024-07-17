@@ -551,41 +551,66 @@ body {
 
 
 .works-item-container {
-  flex-direction: row;
+  /* background-color: green; */
+  /* flex-direction: row; */
 }
 
 .works-item {
-  transform: translateX(300%);
-  animation: image-scroll linear forwards;
-  animation-timeline: view();
-  animation-range: 10% 100%;
-    flex-direction: row;
+  /* background-color: white; */
+  flex-direction: row;
+  position: relative;
+  /* width: 100%;/ */
+  /* transform: translateX(300%); */
+  /* animation: image-scroll linear forwards; */
+  /* animation-timeline: view(); */
+  /* animation-range: 10% 100%; */
 }
 
 .works-image-item {
-  width: 60vw;
-    border-radius: 15px 0 0 15px ;
-  border-right: 1px white dashed;
+  max-width: 90vw;
+  max-height: 70vh;
+  transition: transform 300ms ease-in-out;
+  /* max-width: 70%; */
+    /* border-radius: 15px 0 0 15px ; */
+  /* border-right: 1px white dashed; */
   
 }
 
 .works-text-container {
-  border-radius: 0 15px 15px 0 ;
-  /* opacity: 0.2; */
-  z-index: -1;
-  transform: translateX(-90%);
-  transition: transform 350ms ease-in-out;
+  position: absolute;
   background-color: #1e1e1e;
-  min-width: 20em;
-  margin: 0 2em 0 0em;
-  padding: 1em 2em;
+  top: 0px;
+  right: -10px;
+  max-width: 35%;
+  height: 100%;
+  padding: 2em 1em;
+  z-index: -1;
+  border-radius: 15px;
+  border: none;
+  transition: transform 300ms ease-in-out;
+
+  /* border-radius: 0 15px 15px 0 ; */
+  /* opacity: 0.2; */
+  /* z-index: -1; */
+  /* transform: translateX(-90%); */
+  /* transition: transform 350ms ease-in-out; */
+  /* background-color: #1e1e1e; */
+  /* min-width: 20em; */
+  /* margin: 0 2em 0 0em; */
+  /* padding: 1em 2em; */
 }
 
-.works-text-container:hover {
-  transform: translateX(0%);
+.works-item:hover .works-text-container{
+  /* transform: translateX(0%); */
   z-index: 1;
+  transform: scale(1.03)
   /* min-width: 20em; */
   /* font-size:  max(min(16vw, 128px), 30px); */
+}
+
+.works-item:hover .works-image-item{
+  /* opacity: 0.5; */
+  transform: scale(0.97)
 }
 
 #technologies-list {

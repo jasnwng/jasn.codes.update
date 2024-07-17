@@ -594,6 +594,7 @@ body {
   max-width: 90vw;
   max-height: 70vh;
   transition: transform 300ms ease-in-out;
+  transform: scale(0.97)
 }
 
 .works-text-container {
@@ -608,17 +609,18 @@ body {
   border-radius: 15px;
   border: none;
   transition: transform 300ms ease-in-out;
-
-}
-
-
-.works-item:hover .works-text-container{
   z-index: 1;
   transform: scale(1.03)
 }
 
+
+.works-item:hover .works-text-container{
+  z-index: -1;
+  transform: scale(1.00)
+}
+
 .works-item:hover .works-image-item{
-  transform: scale(0.97)
+  transform: scale(1)
 }
 
 

@@ -322,10 +322,6 @@ body {
 
 
 
-@keyframes image-scroll {
-  0% {transform: translateX(+300%)}
-  100% {transform: translateX(-300%)}
-}
 
 @keyframes heading-fade-in {
     0% { transform: translateY(5vh)}
@@ -537,7 +533,10 @@ body {
 
   .sec2 {
     height: 200vh;
+  }
 
+  .sec3 {
+    height: 600vh;
   }
 
 /*   
@@ -549,31 +548,52 @@ body {
   position: absolute;
 } */
 
+#works-container {
+  /* background-color: yellow; */
+  height: 300vh;
+}
 
 .works-item-container {
+  position: sticky ;
+  top: 25vh;
   /* background-color: green; */
-  /* flex-direction: row; */
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform: translateX(70%); 
+  animation: image-scroll linear forwards;
+  animation-timeline: view();
+  animation-range: 20% 75%;
 }
 
 .works-item {
   /* background-color: white; */
   flex-direction: row;
   position: relative;
-  /* width: 100%;/ */
-  /* transform: translateX(300%); */
-  /* animation: image-scroll linear forwards; */
-  /* animation-timeline: view(); */
-  /* animation-range: 10% 100%; */
+  /* animation: none; */
+}
+
+.works-image-item {
+  /* opacity: 0; */
+  /* animation: appear linear forwards;
+  animation-timeline: view();
+  animation-range: 20% 80%; */
+} 
+
+@keyframes image-scroll {
+  0% {transform: translateX(70%)}
+  100% {transform: translateX(-70%)}
+}
+
+@keyframes appear {
+  0% { opacity: 0}
+  100% {opacity: 1}
 }
 
 .works-image-item {
   max-width: 90vw;
   max-height: 70vh;
   transition: transform 300ms ease-in-out;
-  /* max-width: 70%; */
-    /* border-radius: 15px 0 0 15px ; */
-  /* border-right: 1px white dashed; */
-  
 }
 
 .works-text-container {
@@ -589,28 +609,26 @@ body {
   border: none;
   transition: transform 300ms ease-in-out;
 
-  /* border-radius: 0 15px 15px 0 ; */
-  /* opacity: 0.2; */
-  /* z-index: -1; */
-  /* transform: translateX(-90%); */
-  /* transition: transform 350ms ease-in-out; */
-  /* background-color: #1e1e1e; */
-  /* min-width: 20em; */
-  /* margin: 0 2em 0 0em; */
-  /* padding: 1em 2em; */
 }
 
+
 .works-item:hover .works-text-container{
-  /* transform: translateX(0%); */
   z-index: 1;
   transform: scale(1.03)
-  /* min-width: 20em; */
-  /* font-size:  max(min(16vw, 128px), 30px); */
 }
 
 .works-item:hover .works-image-item{
-  /* opacity: 0.5; */
   transform: scale(0.97)
+}
+
+
+#ar-text {
+  z-index: 1;
+  transform: scale(1.03)
+}
+
+#ar-image {
+   transform: scale(0.97)
 }
 
 #technologies-list {

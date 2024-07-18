@@ -180,3 +180,11 @@ window.addEventListener('scroll', () => {
   // }
 
 })
+
+const toggleNav = () => {
+  console.log('nav')
+
+  document.body.dataset.nav = document.body.dataset.nav === 'true' ? 'false' : 'true';
+
+  
+}

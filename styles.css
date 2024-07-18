@@ -3,11 +3,113 @@ html {
 }
 
 body {
-  padding: 16pt;
-  background-color: #2a2a2a;
   /* background-color: grey; */
+  background-color: #2a2a2a;
   /* cursor: none; */
 }
+
+main {
+  background-color: #2a2a2a;
+  padding: 16pt;
+  position: relatice;
+  z-index: 2;
+  transition: transform 750ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+}
+
+
+
+#nav-toggle {
+   height: 2rem;
+   width: 2rem;
+   position: fixed;
+   z-index: 2000;
+   right: 2rem;
+   top: 2rem;
+   transform: translateX(-50%);
+   background-color: #df5f24;
+   border: none;
+   border-radius: 5rem;
+   outline: none;
+   box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+   cursor: pointer;
+   transition: transform, background-color;
+   transition-timing-function: ease;
+   transition-duration: 400ms;
+}
+
+#nav-toggle:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+#nav-toggle:active {
+  transform: translateX(-50%) scale(0.9);
+}
+
+#nav-toggle > i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+}
+
+
+
+#nav {
+  height: 100vh;
+  width: 50vw;
+  background-color: #2a2a2a;
+  /* background-color: white; */
+  /* background-color: #df5f24; */
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  transform: translateX(50vw) scale(0.9);
+  transition: transform 750ms ease-out
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-right: clamp(2rem, 2vw, 3rem);
+  padding: 5rem clamp(2rem, 2vw, 3rem);
+  transition: transform 750ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+}
+
+#nav-links > .nav-link {
+  text-decoration: none;
+}
+
+#nav-links > .nav-link > .nav-link-label {
+  color: #df5f24;
+  /* color: #2a2a2a; */
+  /* color: white; */
+  font-size: max(min(12vw, 96px), 24px);
+  margin: 0rem;
+  text-transform: lowercase;
+}
+
+@keyframes slide-up {
+  0% {transform: translateY(2000px)}
+  100% {transform: translateY(0px)}
+}
+
+body[data-nav='true'] > main {
+  transform: translateX(-50vw);
+  opacity: 0.2;
+}
+
+body[data-nav='true'] > #nav {
+  transform: translateX(0) scale(1);
+}
+
+/* body[data-nav='true'] > nav > #nav-links {
+  transform: translateX(0%) scale(1);
+} */
+
+
 .scroll-watcher {
   height: 5px;
   position: fixed;
@@ -68,7 +170,6 @@ body {
   50% {transform: translate(-50%, -50%) scale(3); border-radius: 100%; background-color: none;}
   100% {transform: translate(-50%, -50%) scale(1); border-radius: 0%; background-color: none;}
 } */
-
 
 .disable-hover {
   pointer-events: none;

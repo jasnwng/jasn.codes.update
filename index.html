@@ -9,11 +9,42 @@
   <title>jasn.codes</title>
 </head>
 
-<div class="scroll-watcher"></div>
-<div class="cursor"></div>
 
-<body>
+<body data-nav="false">
 
+  <div class="scroll-watcher"></div>
+  <div class="cursor"></div>
+
+  
+  <nav id="nav">
+    <div id="nav-links">
+      <a class="nav-link" href="#" onclick="toggleNav()">
+        <h2 class="nav-link-label">Home</h2>
+      </a>
+      <a class="nav-link" href="#">
+        <h2 class="nav-link-label">About</h2>
+      </a>
+      <a class="nav-link" href="#">
+        <h2 class="nav-link-label">Projects</h2>
+      </a>
+      <a class="nav-link" href="#">
+        <h2 class="nav-link-label">Technologies</h2>
+      </a>
+      <a class="nav-link" href="#">
+        <h2 class="nav-link-label">Contact</h2>
+      </a>
+      </a>
+    </div>
+  </nav>
+
+
+  <button id="nav-toggle" type="button" onclick="toggleNav()">
+    <i class="open fa-light fa-bars-staggered"></i>
+    <i class="close fa-light fa-xmark-large"></i>
+  </button>
+  
+
+  <main>
   <section class="sec-1">
     <div id="title-main-container">
       <h1 id="title-main" >
@@ -208,6 +239,7 @@
         </div>
       </div>
   </section>
+  </main>
 
 </body>
 </html>

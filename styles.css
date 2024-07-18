@@ -636,7 +636,7 @@ body[data-nav='true'] > #nav-toggle {
   align-items: center;
   animation: fade-in-out linear forwards;
   animation-timeline: view();
-  animation-range: 30% 100%;
+  animation-range: 20% 100%;
   opacity: 0%;
   padding-bottom: 5em;
 }
@@ -742,7 +742,7 @@ body[data-nav='true'] > #nav-toggle {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  transform: translateX(70%); 
+  transform: translateX(100%); 
   animation: image-scroll linear forwards;
   animation-timeline: view();
   animation-range: 20% 75%;
@@ -755,16 +755,22 @@ body[data-nav='true'] > #nav-toggle {
   /* animation: none; */
 }
 
-.works-image-item {
-  /* opacity: 0; */
-  /* animation: appear linear forwards;
-  animation-timeline: view();
-  animation-range: 20% 80%; */
+.works-item {
+  opacity: 1;
+  animation: none;
 } 
 
+.works-text-container, #festify-image, #spot-image, #ar-image
+ {
+  opacity: 0; 
+  animation: appear linear forwards;
+  animation-timeline: view();
+  animation-range: 20% 30%;
+}
+
 @keyframes image-scroll {
-  0% {transform: translateX(70%)}
-  100% {transform: translateX(-70%)}
+  0% {transform: translateX(100%)}
+  100% {transform: translateX(-100%)}
 }
 
 @keyframes appear {

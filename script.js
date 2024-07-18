@@ -33,45 +33,45 @@ window.addEventListener("click", () => {
 
 
 
-async function scrollDistance (callback, refresh) {
+// async function scrollDistance (callback, refresh) {
 
-	// Make sure a valid callback was provided
-	if (!callback || typeof callback !== 'function') return;
+// 	// Make sure a valid callback was provided
+// 	if (!callback || typeof callback !== 'function') return;
 
-	// Variables
-	var isScrolling, start, end, distance;
+// 	// Variables
+// 	var isScrolling, start, end, distance;
 
-	// Listen for scroll events
-	window.addEventListener('scroll', function (event) {
+// 	// Listen for scroll events
+// 	window.addEventListener('scroll', function (event) {
 
-		// Set starting position
-		if (!start) {
-			start = window.pageYOffset;
-		}
+// 		// Set starting position
+// 		if (!start) {
+// 			start = window.pageYOffset;
+// 		}
 
-		// Clear our timeout throughout the scroll
-		window.clearTimeout(isScrolling);
+// 		// Clear our timeout throughout the scroll
+// 		window.clearTimeout(isScrolling);
 
-		// Set a timeout to run after scrolling ends
-		isScrolling = setTimeout(function() {
+// 		// Set a timeout to run after scrolling ends
+// 		isScrolling = setTimeout(function() {
 
-			// Calculate distance
-			end = window.pageYOffset;
-			distance = end - start;
+// 			// Calculate distance
+// 			end = window.pageYOffset;
+// 			distance = end - start;
 
-			// Run the callback
-			callback(distance, start, end);
+// 			// Run the callback
+// 			callback(distance, start, end);
 
-			// Reset calculations
-			start = null;
-			end = null;
-			distance = null;
+// 			// Reset calculations
+// 			start = null;
+// 			end = null;
+// 			distance = null;
 
-		}, refresh || 66);
+// 		}, refresh || 66);
 
-	}, false);
+// 	}, false);
 
-};
+// };
 
 
 
@@ -128,17 +128,17 @@ window.addEventListener('scroll', () => {
     about3.style.opacity = "0"
     about4.style.opacity = "0"
   }
-  if (sec2ScrolledPercent >= 30 && sec2ScrolledPercent < 50) {
+  if (sec2ScrolledPercent >= 30 && sec2ScrolledPercent < 45) {
     about2.style.opacity = "1"
     about3.style.opacity = "0"
     about4.style.opacity = "0"
   }
-  if (sec2ScrolledPercent >= 50 && sec2ScrolledPercent < 70) {
+  if (sec2ScrolledPercent >= 45 && sec2ScrolledPercent < 60) {
     about2.style.opacity = "0"
     about3.style.opacity = "1"
     about4.style.opacity = "0"
   } 
-  if (sec2ScrolledPercent >= 70 && sec2ScrolledPercent < 100) {
+  if (sec2ScrolledPercent >= 60 && sec2ScrolledPercent < 100) {
     about2.style.opacity = "0"
     about3.style.opacity = "0"
     about4.style.opacity = "1"

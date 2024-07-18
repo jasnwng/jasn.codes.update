@@ -21,33 +21,33 @@
       <a class="nav-link" href="#" onclick="toggleNav()">
         <h2 class="nav-link-label">Home</h2>
       </a>
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="#sec-2" onclick="toggleNav()">
         <h2 class="nav-link-label">About</h2>
       </a>
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="#sec-3" onclick="toggleNav()">
         <h2 class="nav-link-label">Projects</h2>
       </a>
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="#sec-4" onclick="toggleNav()">
         <h2 class="nav-link-label">Technologies</h2>
       </a>
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="#sec-5" onclick="toggleNav()">
         <h2 class="nav-link-label">Contact</h2>
       </a>
       </a>
     </div>
   </nav>
 
-
+  <div id="nav-toggle-container">
   <button id="nav-toggle" type="button" onclick="toggleNav()">
     <i class="open fa-light fa-bars-staggered"></i>
     <i class="close fa-light fa-xmark-large"></i>
   </button>
-  
+  </div>
 
   <main>
-  <section class="sec-1">
+  <section class="sec-1" id="sec-1">
     <div id="title-main-container">
-      <h1 id="title-main" >
+      <h1 id="title-main" onclick="toggleNav()">
         <span>j</span>
         <span>a</span>
         <span>s</span>
@@ -68,7 +68,7 @@
   
   </section>
 
-    <section class="sec-2">
+    <section class="sec-2" id="sec-2">
       <div id="about-container">
         <p>Jason Wong is a freelance designer and developer from London
           <span class="about-text-secondary" id="about-text-2">who is passionate about creating beautiful and engaging digital experiences</span>
@@ -78,7 +78,7 @@
       </div>
   </section>
 
-    <section class="sec-3">
+    <section class="sec-3" id="sec-3">
       <div id="works-container">
         <h1>projects</h1>
           <div class="works-item-container">
@@ -150,7 +150,7 @@
       </div>
   </section>
 
-   <section class="sec-4">
+   <section class="sec-4" id="sec-4">
        <div id="technologies-container">
         <h1>technologies</h1>
         <div id="technologies-list">
@@ -213,7 +213,7 @@
       </div>
   </section>
 
-   <section class="sec-5">
+   <section class="sec-5" id="sec-5">
       <div id="contact-container">
         <h1>let's connect</h1>
         <div id="contact-body">

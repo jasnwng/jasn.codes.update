@@ -4,20 +4,75 @@ const links = document.querySelectorAll("#title-main span, a, button");
 window.addEventListener("mousemove", (e) => {
   let x = e.pageX;
   let y = e.pageY;
+
   cursor.forEach(el => {
     el.style.left = `${x}px`;
     el.style.top = `${y}px`;
     
     links.forEach(link => {
       link.addEventListener("mouseenter", () => {
-          el.classList.add("hover");
+        el.classList.add("hover");
+        // el.classList.add("bounce")
         })
         link.addEventListener("mouseleave", () => {
-            el.classList.remove("hover");
+          el.classList.remove("hover");
+          // el.classList.remove("bounce")
       })
     })
   })
 })
+
+window.addEventListener("click", () => {
+  cursor.forEach(el => {
+    el.classList.add("expand")
+    setTimeout(() => {
+      el.classList.remove("expand")
+    }, 500)
+  })
+})
+
+
+
+async function scrollDistance (callback, refresh) {
+
+	// Make sure a valid callback was provided
+	if (!callback || typeof callback !== 'function') return;
+
+	// Variables
+	var isScrolling, start, end, distance;
+
+	// Listen for scroll events
+	window.addEventListener('scroll', function (event) {
+
+		// Set starting position
+		if (!start) {
+			start = window.pageYOffset;
+		}
+
+		// Clear our timeout throughout the scroll
+		window.clearTimeout(isScrolling);
+
+		// Set a timeout to run after scrolling ends
+		isScrolling = setTimeout(function() {
+
+			// Calculate distance
+			end = window.pageYOffset;
+			distance = end - start;
+
+			// Run the callback
+			callback(distance, start, end);
+
+			// Reset calculations
+			start = null;
+			end = null;
+			distance = null;
+
+		}, refresh || 66);
+
+	}, false);
+
+};
+
 
 
 // window.addEventListener("scroll", setScrollVar)
@@ -61,13 +116,12 @@ const sec2Height = document.querySelector(".sec-2").scrollHeight + compensation
 // const sec3Height = document.querySelector(".sec-3").scrollHeight + compensation
 
 window.addEventListener('scroll', () => {
-  
-  
+
+
   // SECTION 2 ABOUT ANIMATIONS
   
   const sec2Scrolled = (scrollY - sec2Start);
   const sec2ScrolledPercent = Math.min(Math.max((sec2Scrolled / sec2Height) * 100, 0), 100);
-  console.log('scroll2', sec2ScrolledPercent)
   
   if (sec2ScrolledPercent < 30) {
     about2.style.opacity = "0"

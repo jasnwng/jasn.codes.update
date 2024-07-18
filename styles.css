@@ -6,6 +6,7 @@ body {
   padding: 16pt;
   background-color: #2a2a2a;
   /* background-color: grey; */
+  /* cursor: none; */
 }
 .scroll-watcher {
   height: 5px;
@@ -19,6 +20,58 @@ body {
   transform-origin: left;
   animation: scroll-watcher linear;
   animation-timeline: scroll();
+}
+
+.cursor {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  background: #df5f24;
+  border: 1px solid #df5f24;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+  transition: 300ms ease-out;
+  border-radius: 50%;
+  /* animation: cursorShape 1000ms linear infinite alternate; */
+}
+
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(4);
+  background: none;
+  transition-property: transform, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.expand {
+  animation: cursorClick 500ms forwards;
+}
+
+/* .bounce {
+  animation: cursorBounce 2500ms infinite;
+} */
+
+/* @keyframes cursorShape {
+  0% {border-radius: 0%;}
+  100% {border-radius: 50%;}
+} */
+
+@keyframes cursorClick {
+  0% {transform: translate(-50%, -50%) scale(1); }
+  20% {transform: translate(-50%, -50%) scale(2); background-color: #2a2a2a;}
+  100% {transform: translate(-50%, -50%) scale(1)}
+}
+
+/* @keyframes cursorBounce {
+  0% {transform: translate(-50%, -50%) scale(1); border-radius: 0%; background-color: none;}
+  50% {transform: translate(-50%, -50%) scale(3); border-radius: 100%; background-color: none;}
+  100% {transform: translate(-50%, -50%) scale(1); border-radius: 0%; background-color: none;}
+} */
+
+
+.disable-hover {
+  pointer-events: none;
 }
 
 @keyframes scroll-watcher {
@@ -100,11 +153,11 @@ body {
   position: relative;
   opacity: 0;
   /* top: 0; */
-  /* transition: all 100ms ease-in-out; */
+  /* transition: all 2500ms ease-in-out; */
 }
 
 #title-main span:hover {
-  top: 0.01em;
+  /* top: 0.01em; */
   /* color: #df5f24; */
 }
 
@@ -605,7 +658,7 @@ body {
 
 .works-image-item {
   max-width: 90vw;
-  max-height: 70vh;
+  max-height: 60vh;
   transition: transform 300ms ease-in-out;
 }
 

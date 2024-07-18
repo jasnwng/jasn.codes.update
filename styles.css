@@ -3,11 +3,127 @@ html {
 }
 
 body {
-  padding: 16pt;
-  background-color: #2a2a2a;
   /* background-color: grey; */
+  background-color: #2a2a2a;
   /* cursor: none; */
 }
+
+main {
+  background-color: #2a2a2a;
+  padding: 16pt;
+  position: relatice;
+  z-index: 2;
+  transition: transform 500ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+}
+
+
+#nav-toggle-container {
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 2vh;
+  left: 16pt;
+  font-size: max(min(3vw, 36px), 24px);
+  height: 1em;
+   z-index: 2000;
+}
+
+#nav-toggle {
+   height: 1rem;
+   width: 2rem;
+   /* position: fixed; */
+   /* left: 2vw;
+   top: 1rem; */
+   background-color: #df5f24;
+   border: none;
+   border-radius: 5rem;
+   outline: none;
+   box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+   cursor: pointer;
+   transition: transform, background-color;
+   transition-timing-function: ease;
+   transition-duration: 400ms;
+   display: flex;
+}
+
+#nav-toggle:hover {
+  transform: scale(1.1);
+}
+
+#nav-toggle:active {
+  transform: scale(0.9);
+}
+
+#nav-toggle > i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+
+
+#nav {
+  height: 100vh;
+  /* width: 40vw; */
+  background-color: #2a2a2a;
+  /* background-color: white; */
+  /* background-color: #df5f24; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  transform: translateX(-100%) scale(0.9);
+  transition: transform 500ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+}
+
+#nav-links {
+  /* background-color: black; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-right: clamp(2rem, 2vw, 3rem);
+  padding: 8rem clamp(2rem, 2vw, 3rem);
+  transition: transform 500ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+}
+
+#nav-links > .nav-link {
+  text-decoration: none;
+}
+
+#nav-links > .nav-link > .nav-link-label {
+  color: #df5f24;
+  /* color: #2a2a2a; */
+  /* color: white; */
+  font-size: max(min(12vw, 96px), 24px);
+  margin: 0rem;
+  text-transform: lowercase;
+}
+
+@keyframes slide-up {
+  0% {transform: translateY(2000px)}
+  100% {transform: translateY(0px)}
+}
+
+body[data-nav='true'] > main {
+  transform: translateX(40vw);
+  opacity: 0.2;
+}
+
+body[data-nav='true'] > #nav {
+  transform: translateX(0) scale(1);
+}
+
+
+body[data-nav='true'] > #nav-toggle {
+  background-color: white;
+}
+
+
 .scroll-watcher {
   height: 5px;
   position: fixed;
@@ -69,7 +185,6 @@ body {
   100% {transform: translate(-50%, -50%) scale(1); border-radius: 0%; background-color: none;}
 } */
 
-
 .disable-hover {
   pointer-events: none;
 }
@@ -117,6 +232,7 @@ body {
 
 
 #title-main-container {
+  /* background-color: blue; */
   /* background-color: blue;
   opacity: 0.5; */
   /* font-size: 128px; */
@@ -138,7 +254,7 @@ body {
   0% {transform: translate(0);}
   100% {
     font-size: max(min(3vw, 36px), 24px);
-    transform: translate(0 , -38vh);
+    transform: translate(calc(16pt + 2rem), -38vh);
     width: 5em;
     height: 1em;
   }
@@ -520,7 +636,7 @@ body {
   align-items: center;
   animation: fade-in-out linear forwards;
   animation-timeline: view();
-  animation-range: 30% 100%;
+  animation-range: 20% 100%;
   opacity: 0%;
   padding-bottom: 5em;
 }
@@ -626,7 +742,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  transform: translateX(70%); 
+  transform: translateX(100%); 
   animation: image-scroll linear forwards;
   animation-timeline: view();
   animation-range: 20% 75%;
@@ -639,16 +755,22 @@ body {
   /* animation: none; */
 }
 
-.works-image-item {
-  /* opacity: 0; */
-  /* animation: appear linear forwards;
-  animation-timeline: view();
-  animation-range: 20% 80%; */
+.works-item {
+  opacity: 1;
+  animation: none;
 } 
 
+.works-text-container, #festify-image, #spot-image, #ar-image
+ {
+  opacity: 0; 
+  animation: appear linear forwards;
+  animation-timeline: view();
+  animation-range: 20% 30%;
+}
+
 @keyframes image-scroll {
-  0% {transform: translateX(70%)}
-  100% {transform: translateX(-70%)}
+  0% {transform: translateX(100%)}
+  100% {transform: translateX(-100%)}
 }
 
 @keyframes appear {

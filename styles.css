@@ -631,8 +631,8 @@ body[data-nav='true'] > #nav-toggle {
   margin-top: 0em;
   display: flex;
   flex-direction: column;
-  /* gap: 0.2em;
-  position: absolute; */
+  gap: 0.5em;
+  /* position: absolute; */
   
 }
 

@@ -352,7 +352,7 @@ body[data-nav='true'] > #nav-toggle {
 .sec-1 {
   height: 50vh;
   /* background-color: blue; */
-  color: white;
+  color: var(--clr-text);
 }
 
 .sec-2 {

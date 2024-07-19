@@ -20,7 +20,9 @@
 <body data-nav="false">
 
   <div class="scroll-watcher"></div>
+  
   <div class="cursor"></div>
+  
 
   
   <nav id="nav">
@@ -37,13 +39,23 @@
       <a class="nav-link" href="#sec-4" onclick="toggleNav()">
         <h2 class="nav-link-label">Technologies</h2>
       </a>
-      <a class="nav-link" href="#a5" onclick="toggleNav()">
+      <a class="nav-link break" href="#a5" onclick="toggleNav()">
         <h2 class="nav-link-label">Contact</h2>
       </a>
-      <a class="nav-link" target="_blank" href="https://jason-wong-resume.tiiny.site/" onclick="toggleNav()">
+      <!-- <a class="nav-link" target="_blank" href="https://jason-wong-resume.tiiny.site/" onclick="toggleNav()">
         <h2 class="nav-link-label">Resume</h2>
+      </a> -->
       </a>
-      </a>
+      <div id="nav-buttons">
+        <a href= "mailto: jasonwong_3@hotmail.com"><img src="public/icons8-email-100.png" alt="Email Icon"> </a>
+        <a href="https://github.com/jasnwng" target="_blank"><img src="public/icons8-github-100.png" alt="GitHub Icon"></a>
+        <a href="https://www.linkedin.com/in/jasnwng/" target="_blank"><img src="public/icons8-linkedin-100.png" alt="Linkedin Icon"></a>
+        <a class="nav-resume" target="_blank" href="https://jason-wong-resume.tiiny.site/" onclick="toggleNav()">
+            <h2 class="resume">CV</h2>
+        </a>
+      </div>
+      
+       <!-- <h3 class="nav-text .break">©2024</h3> -->
     </div>
   </nav>
 
@@ -82,6 +94,9 @@
   </section>
 
     <section class="sec-2" id="sec-2">
+        <div class="scroll-icon">
+          <div class="mouse"></div>
+        </div>
       <div id="about-container">
         <p>Jason Wong is a freelance designer and developer from London
           <span class="about-text-secondary" id="about-text-2">who is passionate about creating beautiful and engaging digital experiences</span>
@@ -104,7 +119,7 @@
               <p class="works-subtitle">About</p>
               <p class="works-text">A web app to explore music festival line-ups across the UK</p>
               <p class="works-subtitle">My role</p>
-              <p class="works-text">Full Stack Developer: entire development lifecycle from initial concept to final implementation</p>
+              <p class="works-text">Full-stack development: entire development lifecycle from initial concept to final implementation</p>
               <a href="https://festify.app/" target="_blank" rel="noopener noreferrer" >Visit Website</a>
               
               <div class="works-technologies">
@@ -127,7 +142,7 @@
               <p class="works-subtitle">About</p>
               <p class="works-text">A social media platform to discover and share restaurant recommendations</p>
               <p class="works-subtitle">My role</p>
-              <p class="works-text">Full Stack Developer: UI/UX design, relational database design, next.js components </p>
+              <p class="works-text">Full-stack development: UI/UX design, relational database design, next.js components </p>
               <a href="https://www.spotsocialmedia.online/" target="_blank" rel="noopener noreferrer" >Visit Website</a>
               
               <div class="works-technologies">
@@ -149,7 +164,7 @@
               <p class="works-subtitle">About</p>
               <p class="works-text">An application connecting parents and bus drivers to help organise school travel</p>
               <p class="works-subtitle">My role</p>
-              <p class="works-text">Full Stack Developer: TypeScript conversion, testing and UI/UX overhaul</p>
+              <p class="works-text">Full-stack development: TypeScript conversion, testing and UI/UX overhaul</p>
               <div class="works-technologies">
                 <div class="tech-bubble"><p class="tech-bubble-text">TypeScript</p></div>
                 <div class="tech-bubble"><p class="tech-bubble-text">React</p></div>
@@ -213,11 +228,18 @@
           </div>
           <div class="technologies-category">
             <div class="technologies-type">
-              <h4>Testing & Workflow</h4>
+              <h4>Testing</h4>
             </div>
             <div class="technologies-items">
               <p>Jest</p>
               <p>Vitest</p>
+            </div>
+          </div>
+          <div class="technologies-category">
+            <div class="technologies-type">
+              <h4>Workflow</h4>
+            </div>
+            <div class="technologies-items">
               <p>Figma</p>
               <p>Git</p>
             </div>

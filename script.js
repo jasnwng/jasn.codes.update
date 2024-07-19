@@ -31,7 +31,14 @@ window.addEventListener("click", () => {
   })
 })
 
+let colors = ['#36b878', '#ea7738', '#6fb5e2',  '#c8c9d2']
+let currentIndex = 0;
 
+// setInterval(() => {
+//   const nextIndex = ++currentIndex % colors.length;
+//   console.log(colors[nextIndex]);
+//   document.documentElement.style.setProperty('--clr-highlight', colors[nextIndex]);
+// }, 500);
 
 // async function scrollDistance (callback, refresh) {
 

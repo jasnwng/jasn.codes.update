@@ -5,6 +5,7 @@
   --clr-primary-310: #ea7738;
   --clr-primary-320: #ff562d;
   --clr-primary-330: #ee6639;
+  --clr-primary-340: #df5f24;
   --clr-primary-410: #6fb5e2;
   --clr-primary-420: #5bb5ef;
   --clr-primary-430: #237abe;
@@ -13,16 +14,19 @@
   --clr-background-210: #d4d5e4;
   --clr-background-220: #dbdfe7;
   --clr-background-230: #c8c9d2;
+  --clr-background-240: #ded3c8;
   --clr-background-310: #0f0f0f;
   --clr-background-320: #000000;
   --clr-background-410: #2a2a2a;
+  --clr-background-420: #2b2b2b;
 
   --clr-green: var(--clr-primary-210);
-  --clr-orange: var(--clr-primary-310);
+  --clr-orange: var(--clr-primary-340);
   --clr-blue: var(--clr-primary-410);
   --clr-white: var(--clr-background-120);
   --clr-lgrey: var(--clr-background-230);
-  --clr-dgrey: var(--clr-background-410);
+  --clr-beige: var(--clr-background-240);
+  --clr-dgrey: var(--clr-background-420);
   --clr-black: var(--clr-background-310);
 
   --clr-highlight: var(--clr-orange);
@@ -107,7 +111,7 @@ main {
 #nav {
   height: 100vh;
   /* width: 40vw; */
-  background-color: var(--clr-background);
+  background-color: var(--clr-dgrey);
   /* background-color: white; */
   /* background-color: #df5f24; */
   position: fixed;
@@ -129,24 +133,25 @@ main {
   margin-right: clamp(2rem, 2vw, 3rem);
   padding: 8rem clamp(2rem, 2vw, 3rem);
   transition: transform 500ms cubic-bezier(.13, 0.53, 0.38, 0.97);
+  border-right: 1px solid var(--clr-beige);
 }
 
 #nav-links > .nav-link {
   text-decoration: none;
-
 }
 
 #nav-links > .nav-link > .nav-link-label {
-  color: var(--clr-highlight);
+  color: var(--clr-beige);
   /* color: #2a2a2a; */
   /* color: white; */
-  font-size: max(min(12vw, 96px), 24px);
+  font-size: max(min(10vw, 80px), 20px);
+  font-famiy: var(--font-heading);
   margin: 0rem;
   text-transform: lowercase;
 }
 
 #nav-links > .nav-link > .nav-link-label:hover {
-  color: var(--clr-text);
+  color: var(--clr-highlight);
   transform: scale(1.02);
 }
 
@@ -157,7 +162,7 @@ main {
 
 body[data-nav='true'] > main {
   transform: translateX(40vw);
-  opacity: 0.2;
+  /* opacity: 0.2; */
 }
 
 body[data-nav='true'] > #nav {
@@ -166,7 +171,7 @@ body[data-nav='true'] > #nav {
 
 
 body[data-nav='true'] > #nav-toggle {
-  background-color: var(--clr-white)
+  background-color: var(--clr-highlight);
 }
 
 
@@ -500,7 +505,7 @@ body[data-nav='true'] > #nav-toggle {
 .works-text-container {
   /* background-color: grey; */
   padding: 1.5em 0em;
-  border-bottom: 1px solid var(--clr-lgrey);
+  border-bottom: 1px solid var(--clr-beige);
 }
 
 .works-text {
@@ -509,7 +514,7 @@ body[data-nav='true'] > #nav-toggle {
 
 .works-subtitle {
   font-size:  max(min(5vw, 20px), 11px);
-  color: var(--clr-lgrey)
+  color: var(--clr-beige)
   /* margin-top: 1em; */
 
 }
@@ -670,7 +675,7 @@ body[data-nav='true'] > #nav-toggle {
   animation-timeline: view();
   animation-range: contain;
   opacity: 0%;
-  margin: 2em 0 2cqi 0;
+  margin: 2em 0 0.5em 0;
 }
 
 #contact-body {
@@ -683,7 +688,7 @@ body[data-nav='true'] > #nav-toggle {
   animation-timeline: view();
   animation-range: 20% 100%;
   opacity: 0%;
-  padding-bottom: 5em;
+  /* padding-bottom: 5em; */
 }
 
 #contact-body p {
@@ -759,13 +764,61 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 #footer {
-  width: 100%;
-  background-color: var(--clr-highlight);
-  color: var(--clr-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-background);
+  /* background-color: blue; */
+  color: var(--clr-highlight);
   font-size: max(min(3vw, 32px), 24px);
-  height: 2em;
+  font-family: var(--font-heading);
+  padding: 3em 0;
 }
 
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#footer a {
+  text-decoration: none;
+  color: var(--clr-text);
+}
+
+#footer a:hover {
+  color: var(--clr-highlight);
+}
+
+.marquee:hover {
+  animation: marquee 1s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, -25%);
+  }
+  50% {
+    transform: translate(0%, 0);
+  }
+  75% {
+    transform: translate(0, +25%);
+  }
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+
+.anchor{
+  display: block;
+  /* height: 115px; same height as header */
+  /* margin-top: -115px; same height as header */
+  visibility: hidden;
+  left: 0;
+}
 
 :root {
   --scroll: 0;

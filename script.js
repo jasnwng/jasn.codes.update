@@ -1,5 +1,5 @@
 const cursor = document.querySelectorAll(".cursor");
-const links = document.querySelectorAll("#title-main span, a, button");
+const links = document.querySelectorAll("#title-main span, #title-secondary, a, button");
 
 window.addEventListener("mousemove", (e) => {
   let x = e.pageX;

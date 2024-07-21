@@ -1,5 +1,5 @@
 const cursor = document.querySelectorAll(".cursor");
-const links = document.querySelectorAll("#title-main span, #title-secondary, a, button");
+const links = document.querySelectorAll("#title-main span, #title-secondary, a, button, .light");
 
 window.addEventListener("mousemove", (e) => {
   let x = e.pageX;
@@ -90,9 +90,19 @@ window.addEventListener('scroll', () => {
 
 })
 
+const lightThemeIcon = document.querySelector(".light-toggle-icon");
 const toggleLight = () => {
   console.log('light');
   document.body.classList.toggle("light-theme");
+  if (document.body.classList.contains("light-theme")) {
+    lightThemeIcon.src = "public/icons/moon.png";
+    lightThemeIcon.style.width = "80%";
+    lightThemeIcon.style.height = "80%";
+  } else {
+    lightThemeIcon.src = "public/icons/sun.png";
+lightThemeIcon.style.width = "100%";
+    lightThemeIcon.style.height = "100%";
+  }
 
   
 }

@@ -31,8 +31,7 @@ window.addEventListener("click", () => {
   })
 })
 
-let colors = ['#36b878', '#ea7738', '#6fb5e2',  '#c8c9d2']
-let currentIndex = 0;
+
 
 // VARIABLES FOR SCROLL ANIMATIONS
 
@@ -91,6 +90,12 @@ window.addEventListener('scroll', () => {
 
 })
 
+const toggleLight = () => {
+  console.log('light');
+  document.body.classList.toggle("light-theme");
+
+  
+}
 
 const navLinks = document.querySelectorAll(".nav-link, #nav-buttons, .nav-text");
 
@@ -112,5 +117,7 @@ const toggleNav = () => {
       link.classList.remove("rise") 
     })
   }
-
 }
+
+
+

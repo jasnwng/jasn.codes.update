@@ -32,16 +32,26 @@ window.addEventListener("click", () => {
 })
 
 
-
 // VARIABLES FOR SCROLL ANIMATIONS
+
 
 const about2 = document.getElementById("about-text-2");
 const about3 = document.getElementById("about-text-3");
 const about4 = document.getElementById("about-text-4");
 
 const compensation = window.innerHeight / 2;
+
+const sec1Start = document.querySelector(".sec-1").offsetTop - compensation;
+const sec1Height = document.querySelector(".sec-1").scrollHeight + compensation
 const sec2Start = document.querySelector(".sec-2").offsetTop - compensation;
 const sec2Height = document.querySelector(".sec-2").scrollHeight + compensation
+const sec3Start = document.querySelector(".sec-3").offsetTop - compensation;
+const sec3Height = document.querySelector(".sec-3").scrollHeight + compensation
+
+
+const titleMain = document.querySelector("#title-main-container");
+const worksContainer = document.querySelector(".works-item-container");
+
 
 const showScrollIcon = () => {
   setTimeout(() => {
@@ -55,12 +65,30 @@ showScrollIcon();
 
 window.addEventListener('scroll', () => {
 
-  console.log(scrollY)
+  // console.log('sy', scrollY)
 
   if (scrollY > 50) {
     document.querySelector(".scroll-icon").style.opacity = '0';
   }
 
+
+  // const sec1Scrolled = (scrollY - sec1Start);
+  // const sec1ScrolledPercent = Math.max((sec1Scrolled / sec1Height) * 100, 0);
+  // console.log('s1 %', sec1ScrolledPercent);
+
+  // // SECTION 1 HEADING 
+
+  // let titleTranslateYDistance = 38
+  // let titleTranslateYCalc = Math.min(Math.max(sec1ScrolledPercent - 50, 0), 100) / 100 * titleTranslateYDistance
+
+  // let fonts = Math.max(Math.min(`3vw`, `36px`), `24px`);
+
+  // titleMain.style.top = `${40 - titleTranslateYCalc}vh`;
+  // if (sec1ScrolledPercent > 100) {
+  //   titleMain.style.width = `${5}em`;
+
+  //   titleMain.style.fontSize = fonts;
+  // }
 
   // SECTION 2 ABOUT ANIMATIONS
   
@@ -88,11 +116,22 @@ window.addEventListener('scroll', () => {
     about4.style.opacity = "1"
   } 
 
+
+  // SECTION 3 PROJECTS
+
+  const sec3Scrolled = (scrollY - sec3Start);
+  const sec3ScrolledPercent = Math.min(Math.max((sec3Scrolled / sec3Height) * 100, 0), 100);
+  console.log('s3', sec3ScrolledPercent)
+  // console.log('s3calc', Math.min(Math.max(sec3ScrolledPercent - 20, 0), 50) / 50);
+  let worksContainerDistance = 200;
+  let worksContainerCalc = Math.min(Math.max(sec3ScrolledPercent - 10, 0), 80) / 80;
+  console.log('p', worksContainerCalc);
+  worksContainer.style.transform = `translateX(${100 - worksContainerDistance * worksContainerCalc}%)`
+
 })
 
 const lightThemeIcon = document.querySelector(".light-toggle-icon");
 const toggleLight = () => {
-  console.log('light');
   document.body.classList.toggle("light-theme");
   if (document.body.classList.contains("light-theme")) {
     lightThemeIcon.src = "public/icons/moon.png";
@@ -114,15 +153,12 @@ const toggleNav = () => {
   document.body.dataset.nav = document.body.dataset.nav === 'true' ? 'false' : 'true';
   
   if (document.body.dataset.nav === 'true') {
-    console.log('true')
-
     navLinks.forEach(link => {
       link.classList.add("rise") 
     })
 
 
   } else {
-    console.log('false')
      navLinks.forEach(link => {
       link.classList.remove("rise") 
     })

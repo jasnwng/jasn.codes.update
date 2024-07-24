@@ -358,8 +358,8 @@ body[data-nav='true'] > #nav-toggle {
 
 
 .scroll-icon {
-  position: relative;
-  top: 35vh;
+  position: fixed;
+  bottom: 15vh;
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: yellow; */
@@ -390,11 +390,12 @@ body[data-nav='true'] > #nav-toggle {
 		opacity: 1;
 		animation: wheel 2s infinite;
 		-webkit-animation: wheel 2s infinite;
+    
 	}
 }
 
 @keyframes wheel {
-	to {
+  to {
 		opacity: 0;
 		top: 2em;
 	}
@@ -513,10 +514,8 @@ body[data-nav='true'] > #nav-toggle {
   width: 100%;
   top: 40vh;
   vertical-align: top;
-  animation: move-title-main linear forwards;
-  animation-timeline: --header;
-  view-timeline-name: --header;
-  animation-range: 50% 150%;
+  /* animation: move-title-main 2000ms ease-in-out 4000ms forwards; */
+  
   z-index: 1;
 }
 
@@ -587,10 +586,8 @@ body[data-nav='true'] > #nav-toggle {
   height: 3em;
   /* height:  calc( max(min(16vw, 128px), 30px)); */
   top: 40vh;
-  animation: move-title-secondary linear forwards;
-  animation-timeline: --header;
-  view-timeline-name: --header;
-  animation-range: 50% 150%;
+  /* animation: move-title-secondary 2000ms ease-in-out 4000ms forwards; */
+
   z-index: 100;
 }
 
@@ -640,6 +637,8 @@ body[data-nav='true'] > #nav-toggle {
   color: var(--clr-text);
   max-width: 900px;
   margin: auto;
+  /* animation: fade-in-out 2000ms linear 4000ms forwards; */
+  /* opacity: 0%; */
 }
 
 
@@ -802,6 +801,7 @@ body[data-nav='true'] > #nav-toggle {
     100% { opacity: 0; transform: translateY(-3vh) }
 }
 
+/* SECTION 4 - TECHNOLOGIES*/
 
 #technologies-container {
   /* background-color: blue; */
@@ -850,6 +850,7 @@ body[data-nav='true'] > #nav-toggle {
 .technologies-category p {
   text-transform: uppercase;
   font-size:  max(min(6vw, 48px), 12px);
+  color: var(--clr-highlight);
 }
 
 
@@ -860,7 +861,7 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 @keyframes slide-in {
-  0% {transform: translateX(50%); opacity: 0.5}
+  0% {transform: translateX(50%); color: var(--clr-text); opacity: 0.5}
   50% {transform: translateX(0); color:  var(--clr-highlight); opacity: 1}
   80% {transform: translateY(0); color:  var(--clr-highlight); opacity: 1; }
   100% {transform: translateY(-5vh); color:  var(--clr-text); opacity: 0; }
@@ -1079,29 +1080,6 @@ body[data-nav='true'] > #nav-toggle {
 
 
 
-@supports (animation-timeline: view()) {
-
-  .sec-1 {
-    height: 50vh;
-  }
-
-
-  .works-item-container {
-    animation: image-scroll linear forwards;
-    animation-timeline: view();
-    animation-range: 20% 75%;
-  }
-  
-  
-  .works-text-container, #festify-image, #spot-image, #ar-image
-   {
-    opacity: 0; 
-    animation: appear linear forwards;
-    animation-timeline: view();
-    animation-range: 20% 30%;
-  }
-  
-}
 
 
 
@@ -1218,12 +1196,31 @@ body[data-nav='true'] > #nav-toggle {
   display: block;
 }
 
-
 }
 
 
+  #title-main-container {
+    animation: move-title-main linear forwards; 
+    animation-timeline: --header;
+    view-timeline-name: --header;
+    animation-range: 50% 150%;
+  }
+
+  #title-secondary-container {
+    animation: move-title-secondary linear forwards;
+    animation-timeline: --header;
+    view-timeline-name: --header;
+    animation-range: 50% 150%;
+  }
+
 
 @supports (animation-timeline: view()) {
+
+  .sec-1 {
+    height: 0vh;
+  }
+
+
   #about-container {
     animation: fade-in-out linear forwards;
     animation-timeline: view();
@@ -1243,6 +1240,20 @@ body[data-nav='true'] > #nav-toggle {
     animation-timeline: view();
     animation-range: cover;
     opacity: 0;
+  }
+
+  /* .works-item-container {
+    animation: image-scroll linear forwards;
+    animation-timeline: view();
+    animation-range: 20% 75%;
+  } */
+  
+  .works-text-container, #festify-image, #spot-image, #ar-image
+   {
+    opacity: 0; 
+    animation: appear linear forwards;
+    animation-timeline: view();
+    animation-range: 20% 30%;
   }
 
   #technologies-container h1 {

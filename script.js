@@ -35,9 +35,10 @@ window.addEventListener("click", () => {
 // VARIABLES FOR SCROLL ANIMATIONS
 
 
-const about2 = document.getElementById("about-text-2");
-const about3 = document.getElementById("about-text-3");
-const about4 = document.getElementById("about-text-4");
+const about1 = document.getElementById("about-container-1");
+const about2 = document.getElementById("about-container-2");
+const about3 = document.getElementById("about-container-3");
+const about4 = document.getElementById("about-container-4");
 
 const compensation = window.innerHeight / 2;
 
@@ -95,39 +96,50 @@ window.addEventListener('scroll', () => {
   const sec2Scrolled = (scrollY - sec2Start);
   const sec2ScrolledPercent = Math.min(Math.max((sec2Scrolled / sec2Height) * 100, 0), 100);
   
-  if (sec2ScrolledPercent < 30) {
+
+  if (sec2ScrolledPercent < 20) {
+    about1.style.opacity = "1"
     about2.style.opacity = "0"
     about3.style.opacity = "0"
     about4.style.opacity = "0"
   }
-  if (sec2ScrolledPercent >= 30 && sec2ScrolledPercent < 45) {
+  if (sec2ScrolledPercent >= 20 && sec2ScrolledPercent < 40) {
     about2.style.opacity = "1"
     about3.style.opacity = "0"
     about4.style.opacity = "0"
+    // about2.style.transform = "translate(0, 0%)"
   }
-  if (sec2ScrolledPercent >= 45 && sec2ScrolledPercent < 60) {
+  if (sec2ScrolledPercent >= 40 && sec2ScrolledPercent < 60) {
     about2.style.opacity = "0"
     about3.style.opacity = "1"
     about4.style.opacity = "0"
-  } 
+    // about2.style.transform = "translate(0, -100%)"
+    // about3.style.transform = "translate(0, 0%)"
+  }
   if (sec2ScrolledPercent >= 60 && sec2ScrolledPercent < 100) {
     about2.style.opacity = "0"
     about3.style.opacity = "0"
     about4.style.opacity = "1"
-  } 
+    // about2.style.transform = "translate(0, -100%)"
+    // about3.style.transform = "translate(0, -100%)"
+    // about4.style.transform = "translate(0, 0%)"
+  }
 
 
   // SECTION 3 PROJECTS
 
-  const sec3Scrolled = (scrollY - sec3Start);
-  const sec3ScrolledPercent = Math.min(Math.max((sec3Scrolled / sec3Height) * 100, 0), 100);
-  console.log('s3', sec3ScrolledPercent)
-  // console.log('s3calc', Math.min(Math.max(sec3ScrolledPercent - 20, 0), 50) / 50);
-  let worksContainerDistance = 200;
-  let worksContainerCalc = Math.min(Math.max(sec3ScrolledPercent - 10, 0), 80) / 80;
-  console.log('p', worksContainerCalc);
-  worksContainer.style.transform = `translateX(${100 - worksContainerDistance * worksContainerCalc}%)`
-
+  const mediaQueryCondition = window.matchMedia('( min-width: 1008px )')
+  if (mediaQueryCondition.matches) {
+    const sec3Scrolled = (scrollY - sec3Start);
+    const sec3ScrolledPercent = Math.min(Math.max((sec3Scrolled / sec3Height) * 100, 0), 100);
+    // console.log('s3', sec3ScrolledPercent)
+    // console.log('s3calc', Math.min(Math.max(sec3ScrolledPercent - 20, 0), 50) / 50);
+    let worksContainerDistance = 200;
+    let worksContainerCalc = Math.min(Math.max(sec3ScrolledPercent - 10, 0), 80) / 80;
+    // console.log('p', worksContainerCalc);
+    worksContainer.style.transform = `translateX(${100 - worksContainerDistance * worksContainerCalc}%)`
+  }
+  
 })
 
 const lightThemeIcon = document.querySelector(".light-toggle-icon");

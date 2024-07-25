@@ -467,13 +467,13 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 .sec-1 {
-  height: 30vh;
+  /* height: 30vh; */
   /* background-color: blue; */
   color: var(--clr-text);
 }
 
 .sec-2 {
-  height: 400vh;
+  min-height: 400vh;
   /* background-color: grey; */
   color: var(--clr-text);
   /* display: flex; */
@@ -481,7 +481,7 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 .sec-3 {
-  /* height: 600vh; */
+  /* min-height: 600vh; */
   /* background-color: blue; */
   color: var(--clr-text);
 }
@@ -493,7 +493,7 @@ body[data-nav='true'] > #nav-toggle {
 
 
 .sec-5 {
-  height: 100vh;
+  min-height: 100vh;
   /* background-color: red; */
   color: var(--clr-text);
 }
@@ -637,24 +637,72 @@ body[data-nav='true'] > #nav-toggle {
   color: var(--clr-text);
   max-width: 900px;
   margin: auto;
-  /* animation: fade-in-out 2000ms linear 4000ms forwards; */
+  
   /* opacity: 0%; */
 }
 
+@keyframes about-entry {
+  0% {opacity: 0; transform: translate(0, 50%)}
+  100% {opacity: 100;  transform: translate(0, 0%)}
+}
+
+.about-item-fixed {
+  position: absolute;
+  z-index: 2;
+  transform: translate(0, 50%);
+  opacity: 0;
+  animation: about-entry 1000ms forwards 2000ms;
+}
+
+.about-item {
+  color: var(--clr-background);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 700ms ease-in, transform 1700ms ease-in-out;
+  /* transition: transform 2000ms; */
+  /* transform: translate(0, 100%); */
+}
 
 .about-text-secondary {
-  color: var(--clr-text-1);
+  /* background-color: blue; */
+  /* width: 100%; */
+
   /* position: absolute; */
-  /* display: inline */
+  /* width: 100%; */
+  display: inline;
   /* top: 1em; */
-  opacity: 0;
-  transition: opacity 1s;
+  /* opacity: 1; */
+  transition: opacity 1000ms;
   /* animation: change-color 0.5s ease-in-out infinite alternate; */
 }
 
+#about-text-2 {
+    color: var(--clr-text-1);
+  /* background-color: red; */
+}
+
+/* #about-text-2:after {
+    -webkit-animation: cycle 4s linear infinite; /* Safari 4+ */
+    /* -moz-animation: cycle 4s linear infinite; /* Fx 5+ */
+    /* -o-animation: cycle 4s linear infinite; Opera 12+ */
+    /* animation: cycle 4s linear infinite; IE 10+, Fx 29+ */ 
+/* } */
+/* 
+@keyframes cycle {
+  0% {
+    content: "who is passionate about creating beautiful and engaging digital experiences";
+  }
+  50% {
+    content: "who has 8 years experience in fast-paced, high-pressure teams";
+  }
+} */
+
+
 #about-text-3 {
+  /* background-color: red; */
   /* opacity: 1; */
   color: var(--clr-text-2);
+  
 }
 
 
@@ -811,7 +859,7 @@ body[data-nav='true'] > #nav-toggle {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3em 0 6em 0;
+  /* margin: 3em 0 6em 0; */
   padding: 1.5em;
 }
 
@@ -821,7 +869,7 @@ body[data-nav='true'] > #nav-toggle {
   font-size:  max(min(14vw, 128px), 30px);
   font-family: var(--font-heading);
   color: var(--clr-text-heading);
-  margin: 2em 0 1em 0;
+  margin: 0.5em 0 1em 0;
   z-index: 1;
 }
 
@@ -873,9 +921,8 @@ body[data-nav='true'] > #nav-toggle {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1em 0;
-  /* padding: 1.5em 0; */
-  padding: 0.5em 0;
+  /* margin: 0.5em 0; */
+  padding: 1.5em 0;
 }
 
 #contact-container h1 {
@@ -884,7 +931,7 @@ body[data-nav='true'] > #nav-toggle {
   font-size:  max(min(14vw, 128px), 30px);
   font-family: var(--font-heading);
   color: var(--clr-text-heading);
-  margin: 2em 0 0em 0;
+  margin: 0.5em 0 0.75em 0;
 }
 
 #contact-body {
@@ -918,7 +965,7 @@ body[data-nav='true'] > #nav-toggle {
   flex-direction: row;
   gap: 1em;
   /* order: -1; */
-  margin: 1.5em 0;
+  margin: 0 0 1em 0;
 }
 
 
@@ -973,11 +1020,11 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 #footer {
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* background-color: blue; */
   color: var(--clr-highlight);
   font-size: max(min(3vw, 24px), 18px);
   font-family: var(--font-heading);
@@ -1035,13 +1082,13 @@ body[data-nav='true'] > #nav-toggle {
 
 @media screen and (min-width: 1008px) {
 
-  .sec2 {
-    height: 200vh;
-  }
+.sec2 {
+  height: 200vh;
+}
 
-  .sec3 {
-    height: 600vh;
-  }
+.sec3 {
+  height: 600vh;
+}
 
 
 #works-container {
@@ -1079,20 +1126,6 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 
-
-
-
-
-@keyframes image-scroll {
-  0% {transform: translateX(100%)}
-  100% {transform: translateX(-100%)}
-}
-
-@keyframes appear {
-  0% { opacity: 0}
-  100% {opacity: 1}
-}
-
 .works-image-item {
   max-width: 90vw;
   max-height: 60vh;
@@ -1115,7 +1148,6 @@ body[data-nav='true'] > #nav-toggle {
   z-index: -1;
 }
 
-
 .works-item:hover .works-text-container{
   z-index: +1;
   transform: scale(1.03)
@@ -1127,6 +1159,38 @@ body[data-nav='true'] > #nav-toggle {
 
 .works-subtitle {
   color: var(--clr-portfolio-heading)
+}
+
+
+@keyframes image-scroll {
+  0% {transform: translateX(100%)}
+  100% {transform: translateX(-100%)}
+}
+
+@keyframes appear {
+  0% { opacity: 0}
+  100% {opacity: 1}
+}
+
+
+@supports (animation-timeline: view()) { 
+  
+
+
+  .works-item-container {
+      animation: image-scroll linear forwards;
+      animation-timeline: view();
+      animation-range: 20% 75%;
+    }
+    
+    .works-text-container, #festify-image, #spot-image, #ar-image
+     {
+      opacity: 0; 
+      animation: appear linear forwards;
+      animation-timeline: view();
+      animation-range: 20% 30%;
+    }
+
 }
 
 
@@ -1196,6 +1260,8 @@ body[data-nav='true'] > #nav-toggle {
   display: block;
 }
 
+
+
 }
 
 
@@ -1216,15 +1282,24 @@ body[data-nav='true'] > #nav-toggle {
 
 @supports (animation-timeline: view()) {
 
-  .sec-1 {
-    height: 0vh;
+
+  #technologies-container h1, #contact-container h1 {
+    margin-top: 3em;
+
   }
 
+  .sec-1 {
+    height: 80vh;
+  }
+
+  .sec-2 {
+    height: 400vh;
+  }
 
   #about-container {
     animation: fade-in-out linear forwards;
     animation-timeline: view();
-    animation-range: 20% 100%;
+    animation-range: 15% 100%;
     opacity: 0%;
   }
 
@@ -1242,20 +1317,7 @@ body[data-nav='true'] > #nav-toggle {
     opacity: 0;
   }
 
-  /* .works-item-container {
-    animation: image-scroll linear forwards;
-    animation-timeline: view();
-    animation-range: 20% 75%;
-  } */
   
-  .works-text-container, #festify-image, #spot-image, #ar-image
-   {
-    opacity: 0; 
-    animation: appear linear forwards;
-    animation-timeline: view();
-    animation-range: 20% 30%;
-  }
-
   #technologies-container h1 {
     animation: fade-in-out linear forwards;
     animation-timeline: view();

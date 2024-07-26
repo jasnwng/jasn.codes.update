@@ -321,7 +321,7 @@ main {
   flex-direction: row;
   gap: 2em;
   /* order: -1; */
-   opacity: 0; 
+  opacity: 0; 
   transform: translateY(2em);
   
 }
@@ -989,7 +989,6 @@ body[data-nav='true'] > #nav-toggle {
 }
 
 #contact-buttons-container {
-  /* background-color: yellow; */
   font-size: max(min(1.3vw, 26px), 22px);
   /* width: 50%; */
   display: flex;

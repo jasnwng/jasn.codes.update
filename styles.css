@@ -1094,6 +1094,7 @@ body[data-nav='true'] > #nav-toggle {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 3em;
   transform: translateX(100%); 
  
 }

@@ -66,57 +66,36 @@ showScrollIcon();
 
 window.addEventListener('scroll', () => {
 
-  // console.log('sy', scrollY)
-
   if (scrollY > 50) {
     document.querySelector(".scroll-icon").style.opacity = '0';
   }
-
-
-  // const sec1Scrolled = (scrollY - sec1Start);
-  // const sec1ScrolledPercent = Math.max((sec1Scrolled / sec1Height) * 100, 0);
-  // console.log('s1 %', sec1ScrolledPercent);
-
-  // // SECTION 1 HEADING 
-
-  // let titleTranslateYDistance = 38
-  // let titleTranslateYCalc = Math.min(Math.max(sec1ScrolledPercent - 50, 0), 100) / 100 * titleTranslateYDistance
-
-  // let fonts = Math.max(Math.min(`3vw`, `36px`), `24px`);
-
-  // titleMain.style.top = `${40 - titleTranslateYCalc}vh`;
-  // if (sec1ScrolledPercent > 100) {
-  //   titleMain.style.width = `${5}em`;
-
-  //   titleMain.style.fontSize = fonts;
-  // }
 
   // SECTION 2 ABOUT ANIMATIONS
   
   const sec2Scrolled = (scrollY - sec2Start);
   const sec2ScrolledPercent = Math.min(Math.max((sec2Scrolled / sec2Height) * 100, 0), 100);
-  
+  console.log('s2', sec2ScrolledPercent);
 
-  if (sec2ScrolledPercent < 20) {
+  if (sec2ScrolledPercent < 25) {
     about1.style.opacity = "1"
     about2.style.opacity = "0"
     about3.style.opacity = "0"
     about4.style.opacity = "0"
   }
-  if (sec2ScrolledPercent >= 20 && sec2ScrolledPercent < 40) {
+  if (sec2ScrolledPercent >= 25 && sec2ScrolledPercent < 45) {
     about2.style.opacity = "1"
     about3.style.opacity = "0"
     about4.style.opacity = "0"
     // about2.style.transform = "translate(0, 0%)"
   }
-  if (sec2ScrolledPercent >= 40 && sec2ScrolledPercent < 60) {
+  if (sec2ScrolledPercent >= 45 && sec2ScrolledPercent < 65) {
     about2.style.opacity = "0"
     about3.style.opacity = "1"
     about4.style.opacity = "0"
     // about2.style.transform = "translate(0, -100%)"
     // about3.style.transform = "translate(0, 0%)"
   }
-  if (sec2ScrolledPercent >= 60 && sec2ScrolledPercent < 100) {
+  if (sec2ScrolledPercent >= 65 && sec2ScrolledPercent < 100) {
     about2.style.opacity = "0"
     about3.style.opacity = "0"
     about4.style.opacity = "1"
